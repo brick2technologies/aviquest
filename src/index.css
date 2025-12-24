@@ -1,0 +1,62 @@
+/* ===============================
+   Tailwind CSS v4
+================================ */
+@import "tailwindcss";
+
+/* ===============================
+   Chillax Font Faces
+================================ */
+@font-face {
+  font-family: "Chillax";
+  src: url("./assets/fonts/Chillax/Chillax-Extralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chillax";
+  src: url("./assets/fonts/Chillax/Chillax-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chillax";
+  src: url("./assets/fonts/Chillax/Chillax-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chillax";
+  src: url("./assets/fonts/Chillax/Chillax-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chillax";
+  src: url("./assets/fonts/Chillax/Chillax-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chillax";
+  src: url("./assets/fonts/Chillax/Chillax-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===============================
+   Utility Class (NOT GLOBAL)
+================================ */
+.font-chillax {
+  font-family: "Chillax", system-ui, sans-serif;
+}
