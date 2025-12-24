@@ -106,9 +106,9 @@ export default function AboutPage() {
                   </defs>
                   <text
                     fill="url(#textGradientMobile)"
-                    fontSize="14"
-                    fontWeight="600"
-                    className="tracking-widest"
+                    fontSize="10"
+                    fontWeight="500"
+                    className="-tracking-normal"
                   >
                     <textPath href="#circlePathMobile">
                       Holistic Care • Technical Expertise • Sustainable

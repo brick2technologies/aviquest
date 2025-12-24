@@ -42,14 +42,14 @@ export default function Navbar() {
 
             {/* Desktop logo */}
             <Link to="/" className="hidden md:block">
-              <img src="/logo.png" alt="Logo" className="h-20" />
+              <img src="/logo.png" alt="Logo" className="h-32" />
             </Link>
           </div>
 
           {/* ===== CENTER: BIG LOGO (MOBILE) ===== */}
           <div className="md:hidden absolute left-1/2 -translate-x-1/2">
             <Link to="/" onClick={() => setOpen(false)}>
-              <img src="/logo.png" alt="Logo" className="h-20" />
+              <img src="/logo.png" alt="Logo" className="h-28" />
             </Link>
           </div>
 

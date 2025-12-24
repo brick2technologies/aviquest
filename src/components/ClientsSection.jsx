@@ -14,7 +14,7 @@ export default function AssociatesSection() {
 
         {/* HEADING */}
         <h2 className="font-chillax text-3xl md:text-4xl font-semibold text-[#0470aa] mb-3">
-          Industry Recognition
+          Industry Collaboration
         </h2>
 
         <p className="  text-slate-600 mb-14 max-w-2xl mx-auto">
