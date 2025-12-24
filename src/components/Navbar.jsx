@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const links = ["Home", "About", "Products", "Blogs", "Contact"];
+  const links = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Products", href: "/products" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Contact", href: "/contact" },
+  ];
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50">
@@ -25,7 +32,6 @@ export default function Navbar() {
         >
           {/* ===== LEFT: MENU (MOBILE) / LOGO (DESKTOP) ===== */}
           <div className="font-chillax flex items-center">
-            {/* Mobile menu */}
             <button
               className="md:hidden mr-2"
               onClick={() => setOpen(!open)}
@@ -35,24 +41,32 @@ export default function Navbar() {
             </button>
 
             {/* Desktop logo */}
-            <img src="/logo.png" alt="Logo" className="hidden md:block h-20" />
+            <Link to="/" className="hidden md:block">
+              <img src="/logo.png" alt="Logo" className="h-20" />
+            </Link>
           </div>
 
           {/* ===== CENTER: BIG LOGO (MOBILE) ===== */}
           <div className="md:hidden absolute left-1/2 -translate-x-1/2">
-            <img src="/logo.png" alt="Logo" className="h-20" />
+            <Link to="/" onClick={() => setOpen(false)}>
+              <img src="/logo.png" alt="Logo" className="h-20" />
+            </Link>
           </div>
 
           {/* ===== RIGHT: NAV LINKS + WHATSAPP (DESKTOP) ===== */}
           <nav className="font-chillax hidden md:flex items-center gap-8 text-md text-[#0071bc] font-medium">
             {links.map((item) => (
-              <a
-                key={item}
-                href={`/${item.toLowerCase()}`}
-                className="hover:text-green-600 transition"
+              <NavLink
+                key={item.name}
+                to={item.href}
+                className={({ isActive }) =>
+                  `transition hover:text-green-600 ${
+                    isActive ? "text-green-600" : ""
+                  }`
+                }
               >
-                {item}
-              </a>
+                {item.name}
+              </NavLink>
             ))}
 
             {/* WhatsApp */}
@@ -97,23 +111,23 @@ export default function Navbar() {
           >
             <nav className="flex flex-col divide-y divide-emerald-200">
               {links.map((item) => (
-                <a
-                  key={item}
-                  href={`/${item.toLowerCase()}`}
+                <NavLink
+                  key={item.name}
+                  to={item.href}
                   onClick={() => setOpen(false)}
-                  className="
-                    py-3
-                    text-[#0071bc]
-                    font-medium
+                  className={({ isActive }) =>
+                    `
+                    py-3 px-3 rounded-lg
+                    font-medium text-[#0071bc]
                     transition
                     hover:bg-emerald-100/70
-                    rounded-lg
                     active:scale-[0.98]
-                    px-3
-                  "
+                    ${isActive ? "bg-emerald-100 text-green-700" : ""}
+                    `
+                  }
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </NavLink>
               ))}
             </nav>
           </div>
