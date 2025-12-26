@@ -11,12 +11,13 @@ import ProductDetailPage from "./pages/ProductDetailsPage";
 import BlogsPage from "./pages/BlogsPage";
 import BlogDetailPage from "./pages/BlogdetailsPage";
 import ContactPage from "./pages/ContactPage";
+import SocialSidebar from "./components/SocailSideBar";
 
 function App() {
   return (
     <>
       <Navbar />
-
+      <SocialSidebar />
       <ScrollToTop />  
 
       <Routes>
