@@ -117,12 +117,11 @@ export default function AboutPage() {
                 </defs>
                 <text
                   fill="url(#textGradientMobile)"
-                  fontSize="10"
-                  fontWeight="500"
+                  fontSize="16"
+                  fontWeight="600"
                 >
                   <textPath href="#circlePathMobile">
-                    Holistic Care • Technical Expertise • Sustainable Innovation •
-                    Research Driven • Scientific Validation •
+                    Holistic Care⭐Technical Expertise⭐Sustainable Innovation⭐Research Driven⭐Scientific Validation⭐
                   </textPath>
                 </text>
               </svg>
@@ -215,13 +214,12 @@ export default function AboutPage() {
               </defs>
               <text
                 fill="url(#textGradientDesktop)"
-                fontSize="14"
-                fontWeight="600"
+                fontSize="13"
+                fontWeight="700"
                 className="tracking-widest"
               >
                 <textPath href="#circlePathDesktop">
-                  Holistic Care • Technical Expertise • Sustainable Innovation •
-                  Research Driven • Scientific Validation •
+                  Holistic Care⭐Technical Expertise⭐Sustainable Innovation⭐Research Driven⭐Scientific Validation⭐
                 </textPath>
               </text>
             </svg>
