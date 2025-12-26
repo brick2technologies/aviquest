@@ -56,7 +56,8 @@ export default function Navbar() {
           </div>
 
           {/* ===== RIGHT: NAV LINKS + WHATSAPP (DESKTOP) ===== */}
-          <nav className="font-chillax hidden md:flex items-center gap-8 text-md text-[#0071bc] font-medium">
+          <nav className="font-chillax hidden md:flex items-center gap-8 text-md text-[#0071bc] font-medium"
+          aria-label="Primary navigation">
             {links.map((item) => (
               <NavLink
                 key={item.name}
@@ -111,7 +112,7 @@ export default function Navbar() {
               duration-200
             "
           >
-            <nav className="flex flex-col divide-y divide-emerald-200">
+            <nav className="flex flex-col divide-y divide-emerald-200" aria-label="Primary navigation">
               {links.map((item) => (
                 <NavLink
                   key={item.name}

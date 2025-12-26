@@ -1,8 +1,17 @@
 import { motion as Motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import SEO from "../components/SEO";
 
 export default function ContactExpertSection() {
   return (
+    <>
+      {/* ================= SEO ================= */}
+      <SEO
+        title="Contact AviQuest Healthcare | Poultry Health & Nutrition Experts"
+        description="Contact AviQuest Healthcare to get expert guidance on poultry health, nutrition, feed supplements, egg production, broiler growth, and farm productivity."
+        keywords="contact aviquest healthcare, poultry health experts, poultry nutrition support, poultry medicine manufacturer contact, aviquest contact"
+        canonical="https://aviquest.in/contact"
+      />
     <section className="bg-white py-24 mt-10">
       <div className="max-w-7xl mx-auto px-6">
 
@@ -133,5 +142,6 @@ export default function ContactExpertSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import { motion as Motion } from "framer-motion";
 import { useEffect, useState, useMemo } from "react";
 import img2 from "/AboutSection.png";
+import SEO from "../components/SEO";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,6 +24,14 @@ export default function AboutPage() {
   }, [images]);
 
   return (
+    <>
+     {/* ================= SEO ================= */}
+      <SEO
+        title="About AviQuest Healthcare | Poultry Health & Nutrition Experts"
+        description="Learn about AviQuest Healthcare, a poultry healthcare company dedicated to scientific, research-driven feed supplements and solutions that improve poultry health, immunity, egg production, and farm productivity."
+        keywords="about aviquest healthcare, poultry healthcare company, poultry nutrition experts, poultry feed supplements manufacturer, poultry health solutions"
+        canonical="https://aviquest.in/about"
+      />
     <main className="bg-white text-slate-800 overflow-hidden">
       {/* ================= HERO ================= */}
       <section className="pt-36 pb-28">
@@ -377,5 +386,6 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

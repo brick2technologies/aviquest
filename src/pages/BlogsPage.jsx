@@ -1,11 +1,21 @@
 import { Link } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import { blogData } from "../data/blogData";
+import SEO from "../components/SEO";
 
 export default function BlogsPage() {
   const blogs = Object.values(blogData);
 
   return (
+    <>
+      {/* ================= SEO ================= */}
+      <SEO
+        title="Aviquest Insights | Poultry Health, Nutrition & Farming Blogs"
+        description="Read expert insights from Aviquest Healthcare on poultry nutrition, bird health management, vaccines, immunity, egg production, broiler growth, and sustainable poultry farming practices."
+        keywords="poultry blogs, poultry health articles, poultry nutrition blogs, egg production tips, broiler management, poultry vaccines, aviquest insights"
+        canonical="https://aviquest.in/blogs"
+      />
+
     <main className="bg-white text-slate-800">
       {/* ================= HEADER ================= */}
       <section className="pt-36 pb-16 text-center">
@@ -71,5 +81,6 @@ export default function BlogsPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

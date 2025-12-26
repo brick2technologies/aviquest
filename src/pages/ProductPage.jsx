@@ -1,5 +1,6 @@
 import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 import Prod1 from "../assets/products/calcipro.png";
 import Prod2 from "../assets/products/bioshield.png";
@@ -23,6 +24,15 @@ const products = [
 
 export default function ProductsPage() {
   return (
+    <>
+      {/* ================= SEO ================= */}
+      <SEO
+        title="Poultry Medicines & Supplements | AviQuest Healthcare Products"
+        description="Explore AviQuest Healthcare’s range of scientifically formulated poultry medicines and feed supplements designed to improve egg production, meat growth, immunity, and overall bird health."
+        keywords="poultry medicines, poultry supplements, poultry feed additives, egg production supplements, broiler growth products, poultry healthcare manufacturer"
+        canonical="https://aviquest.in/products"
+      />
+
     <main className="bg-white text-slate-800">
       {/* ================= PAGE HERO ================= */}
       <section className="pt-40 pb-28 text-center">
@@ -110,5 +120,6 @@ export default function ProductsPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

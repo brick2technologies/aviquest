@@ -3,7 +3,8 @@ import XIcon from "/x-icon.svg";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 mt-20">
+    <footer className="relative z-10 mt-20"
+    aria-label="footer">
       {/* SAME CONTAINER AS NAVBAR */}
       <div className="mx-auto max-w-[95%] px-0">
 
