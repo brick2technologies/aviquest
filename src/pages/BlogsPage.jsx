@@ -19,8 +19,8 @@ export default function BlogsPage() {
         </Motion.h1>
 
         <p className="mt-5 max-w-2xl mx-auto text-slate-600">
-          Expert articles on poultry nutrition, health management, vaccines,
-          and sustainable farming practices.
+          Expert articles on poultry nutrition, health management, vaccines, and
+          sustainable farming practices.
         </p>
       </section>
 
@@ -28,20 +28,19 @@ export default function BlogsPage() {
       <section className="pb-24">
         <div className="max-w-7xl mx-auto px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog, index) => (
-            <Link
-              key={blog.id}
-              to={`/blogs/${blog.id}`}
-              className="group"
-            >
+            <Link key={blog.id} to={`/blogs/${blog.id}`} className="group">
               <Motion.article
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="
-                  rounded-3xl border border-slate-200
-                  overflow-hidden bg-white
-                  shadow-sm transition
+                  rounded-3xl 
+                  overflow-hidden bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.16),_rgba(16,185,129,0.22),_rgba(236,253,245,0.65))]
+        backdrop-blur-xl
+        border border-emerald-200/60
+        shadow-[0_20px_60px_rgba(16,185,129,0.18)]
+                  transition
                   group-hover:shadow-lg
                 "
               >

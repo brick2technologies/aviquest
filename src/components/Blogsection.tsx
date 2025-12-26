@@ -68,8 +68,11 @@ export default function BlogSection() {
               className="
                 group
                 rounded-2xl
-                border border-slate-200
-                bg-white
+                
+                bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.16),_rgba(16,185,129,0.22),_rgba(236,253,245,0.65))]
+        backdrop-blur-xl
+        border border-emerald-200/60
+        shadow-[0_20px_60px_rgba(16,185,129,0.18)]
                 hover:shadow-xl
                 transition
               "

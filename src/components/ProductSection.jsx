@@ -60,7 +60,8 @@ export default function ProductsSection() {
               className="
                 group rounded-2xl border
                 border-[#336600]/30
-                bg-slate-50
+                bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.28),_rgba(16,185,129,0.30),_rgba(236,253,245,0.6))]
+
                 shadow-sm hover:shadow-lg
                 transition
               "

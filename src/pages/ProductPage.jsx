@@ -59,9 +59,12 @@ export default function ProductsPage() {
                 transition={{ duration: 0.45, delay: i * 0.06 }}
                 viewport={{ once: true }}
                 className="
-      group rounded-3xl border border-slate-200
-      bg-white p-6
-      shadow-sm hover:shadow-xl
+      group rounded-3xl 
+      bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.16),_rgba(16,185,129,0.22),_rgba(236,253,245,0.65))]
+        backdrop-blur-xl
+        border border-emerald-200/60
+        shadow-[0_20px_60px_rgba(16,185,129,0.18)] p-6
+      hover:shadow-xl
       transition-all duration-300
       flex flex-col
     "
@@ -97,7 +100,7 @@ export default function ProductsPage() {
                         hover:bg-[#0071BC]
                         hover:text-white
                         "
-                    >  
+                  >
                     View Details
                   </Link>
                 </div>

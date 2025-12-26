@@ -73,7 +73,10 @@ export default function ContactExpertSection() {
             viewport={{ once: true }}
             className="w-full"
           >
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.16),_rgba(16,185,129,0.22),_rgba(236,253,245,0.65))]
+        backdrop-blur-xl
+        border border-emerald-200/60
+        shadow-[0_20px_60px_rgba(16,185,129,0.18)] p-8 ">
               <h3 className="text-lg font-semibold text-slate-900 mb-6">
                 Please enter your information
               </h3>
