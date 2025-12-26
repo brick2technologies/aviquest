@@ -37,7 +37,7 @@ export default function HeroSection() {
             "
           >
             <source
-              src="/hero-aviquest-mobile.mp4"
+              src="https://res.cloudinary.com/di1bfo7ma/video/upload/v1766741429/hero-aviquest-mobile_ktbmxk.mp4"
               type="video/mp4"
             />
           </video>
@@ -57,7 +57,7 @@ export default function HeroSection() {
             "
           >
             <source
-              src="/hero-aviquest-desktop.mp4"
+              src="https://res.cloudinary.com/di1bfo7ma/video/upload/v1766741574/hero-aviquest-desktop_1_f7dere.mp4"
               type="video/mp4"
             />
           </video>
