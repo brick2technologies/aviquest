@@ -23,7 +23,9 @@ export default function Navbar() {
             relative flex items-center justify-between
             h-20
             rounded-full
-            bg-emerald-50/90
+            bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.28),_rgba(16,185,129,0.30),_rgba(236,253,245,0.6))]
+
+
             backdrop-blur-md
             border border-emerald-200
             shadow-[0_6px_20px_rgba(16,185,129,0.15)]
