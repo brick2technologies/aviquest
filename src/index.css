@@ -4,6 +4,18 @@
 @import "tailwindcss";
 
 /* ===============================
+   Google Font – Poppins (for <p>)
+================================ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* ===============================
+   Base Settings
+================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===============================
    Chillax Font Faces
 ================================ */
 @font-face {
@@ -55,8 +67,33 @@
 }
 
 /* ===============================
-   Utility Class (NOT GLOBAL)
+   Typography Rules
+================================ */
+
+/* Headings & UI */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Chillax", system-ui, sans-serif;
+}
+
+/* Paragraph text */
+p {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* ===============================
+   Utility Classes
 ================================ */
 .font-chillax {
   font-family: "Chillax", system-ui, sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", system-ui, sans-serif;
 }
