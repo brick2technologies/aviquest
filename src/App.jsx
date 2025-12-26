@@ -11,7 +11,7 @@ import ProductDetailPage from "./pages/ProductDetailsPage";
 import BlogsPage from "./pages/BlogsPage";
 import BlogDetailPage from "./pages/BlogdetailsPage";
 import ContactPage from "./pages/ContactPage";
-import SocialSideBar from "./components/SocailSideBar";
+import SocialSideBar from "./components/SocailSidebar";
 
 function App() {
   return (
