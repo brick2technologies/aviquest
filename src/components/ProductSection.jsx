@@ -58,6 +58,7 @@ export default function ProductsSection() {
               transition={{ delay: index * 0.06, duration: 0.45 }}
               whileHover={{ y: -8 }}
               className="
+              
                 group rounded-2xl border
                 border-[#336600]/30
                 bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.28),_rgba(16,185,129,0.30),_rgba(236,253,245,0.6))]

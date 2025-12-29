@@ -13,9 +13,12 @@ import BlogDetailPage from "./pages/BlogdetailsPage";
 import ContactPage from "./pages/ContactPage";
 import SocialSideBar from "./components/SocailSidebar";
 
+
 function App() {
   return (
     <>
+    
+    
       <Navbar />
       <SocialSideBar />
       <ScrollToTop />  
@@ -31,6 +34,7 @@ function App() {
       </Routes>
 
       <Footer />
+      
     </>
   );
 }

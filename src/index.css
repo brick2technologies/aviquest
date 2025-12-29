@@ -89,3 +89,18 @@ p {
 .font-poppins {
   font-family: "Poppins", system-ui, sans-serif;
 }
+
+/* Default cursor everywhere */
+html, body {
+  cursor: url("/egg.png") 15 15, auto;
+}
+
+/* Hover cursor */
+/* *:hover {
+  cursor: url("/chick.png") 15 15, pointer;
+} */
+
+/* Active (click) cursor */
+*:active {
+  cursor: url("/broken-egg.png") 15 15, auto;
+}
