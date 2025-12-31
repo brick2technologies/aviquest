@@ -1,4 +1,5 @@
-import { motion as Motion} from "framer-motion";
+import { motion as Motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import Prod1 from "../assets/products/calcipro.png";
 import Prod2 from "../assets/products/bioshield.png";
@@ -7,7 +8,7 @@ import Prod4 from "../assets/products/mintreat.png";
 import Prod5 from "../assets/products/enzyplus.png";
 import Prod6 from "../assets/products/aqsan.png";
 import Prod7 from "../assets/products/phytacare.png";
-import Prod8 from "../assets/products/aqmix.png";
+// import Prod8 from "../assets/products/aqmix.png";
 
 export default function ProductsSection() {
   const products = [
@@ -18,21 +19,20 @@ export default function ProductsSection() {
     { id: "enzyplus-p", name: "EnzyPlus", img: Prod5 },
     { id: "aq-san", name: "Aq San", img: Prod6 },
     { id: "phytacare", name: "PhytaCare", img: Prod7 },
-    { id: "aq-mix", name: "Aq Mix", img: Prod8 },
+    // { id: "aq-mix", name: "Aq Mix", img: Prod8 },
   ];
 
   return (
     <section className="bg-white py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-
         {/* Heading */}
         <div className="flex justify-center pb-2">
-  <Motion.h2
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.7 }}
-    viewport={{ once: true }}
-    className="
+          <Motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="
     font-chillax
       text-center
       text-4xl
@@ -41,11 +41,10 @@ export default function ProductsSection() {
       font-semibold
       text-[#0071BC]
     "
-  >
-    Our Products
-  </Motion.h2>
-</div>
-
+          >
+            Our Products
+          </Motion.h2>
+        </div>
 
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -89,26 +88,27 @@ export default function ProductsSection() {
                   {product.name}
                 </h3>
 
-                <Motion.button
-                  whileHover={{ scale: 1.06 }}
-                  whileTap={{ scale: 0.96 }}
-                  className="
-                    mt-4 inline-flex rounded-full
-                    border border-[#0071BC]
-                    px-5 py-2 text-xs font-medium
-                    text-[#0071BC]
-                    hover:bg-[#0071BC]
-                    hover:text-white
-                    transition
-                  "
-                >
-                  Know More
-                </Motion.button>
+                <Link to={`/products/${product.id}`}>
+                  <Motion.span
+                    whileHover={{ scale: 1.06 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="
+      mt-4 inline-flex rounded-full
+      border border-[#0071BC]
+      px-5 py-2 text-xs font-medium
+      text-[#0071BC]
+      hover:bg-[#0071BC]
+      hover:text-white
+      transition
+    "
+                  >
+                    Know More
+                  </Motion.span>
+                </Link>
               </div>
             </Motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

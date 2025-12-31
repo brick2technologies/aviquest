@@ -257,55 +257,93 @@ export default function AboutPage() {
 </section>
 
 
-      {/* ================= SCIENCE & INNOVATION ================= */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <Motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="font-chillax text-3xl font-semibold text-[#0071BC] mb-6">
-              Science at Our Core
-            </h2>
-            <p className="text-slate-700 leading-relaxed mb-4">
-              Our formulations are built on advanced scientific research and
-              validated nutritional principles.
-            </p>
-          </Motion.div>
+  <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          <Motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="rounded-3xl border border-slate-200 p-10 bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.28),_rgba(16,185,129,0.30),_rgba(236,253,245,0.6))]"
-          >
-            <ul className="space-y-6">
-              {[
-                "Research-driven formulations",
-                "Performance-focused nutrition",
-                "Quality-controlled production",
-                "Field-tested solutions",
-              ].map((item, i) => (
-                <Motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4"
-                >
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#336600]" />
-                  <span className="text-slate-700 font-medium">{item}</span>
-                </Motion.li>
-              ))}
-            </ul>
-          </Motion.div>
-        </div>
-      </section>
+    {/* ================= LEFT: IMAGE ================= */}
+    <Motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="
+        rounded-3xl
+        overflow-hidden
+        border border-slate-200
+        bg-slate-100
+      "
+    >
+     <div className="w-full h-[300px] md:h-[400px] lg:h-[420px]">
+  <img
+    src="/aboutpage-science.png"
+    alt="Scientific research"
+    className="w-full h-full object-cover"
+  />
+</div>
+
+    </Motion.div>
+
+    {/* ================= RIGHT: CONTENT ================= */}
+    <div className="space-y-10">
+
+      {/* TEXT ON TOP */}
+      <Motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="font-chillax text-3xl font-semibold text-[#0071BC] mb-6">
+          Science at Our Core
+        </h2>
+        <p className="text-slate-700 leading-relaxed">
+          Our formulations are built on advanced scientific research and
+          validated nutritional principles.
+        </p>
+      </Motion.div>
+
+      {/* CARD BELOW TEXT */}
+      <Motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="
+          rounded-3xl
+          border border-slate-200
+          p-10
+          bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.28),_rgba(16,185,129,0.30),_rgba(236,253,245,0.6))]
+        "
+      >
+        <ul className="space-y-6">
+          {[
+            "Research-driven formulations",
+            "Performance-focused nutrition",
+            "Quality-controlled production",
+            "Field-tested solutions",
+          ].map((item, i) => (
+            <Motion.li
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-4"
+            >
+              <span className="h-2.5 w-2.5 rounded-full bg-[#336600]" />
+              <span className="text-slate-700 font-medium">
+                {item}
+              </span>
+            </Motion.li>
+          ))}
+        </ul>
+      </Motion.div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* ================= IMPACT ================= */}
       <section className="py-24 bg-white">
@@ -359,7 +397,7 @@ export default function AboutPage() {
       </section>
 
       {/* ================= FUTURE ================= */}
-      <section className="py-28">
+      {/* <section className="py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Motion.h2
             initial="hidden"
@@ -384,7 +422,7 @@ export default function AboutPage() {
             health of poultry go hand in hand.
           </Motion.p>
         </div>
-      </section>
+      </section> */}
     </main>
     </>
   );

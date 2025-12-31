@@ -3,203 +3,241 @@ import XIcon from "/x-icon.svg";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 mt-20"
-    aria-label="footer">
-      {/* SAME CONTAINER AS NAVBAR */}
+    <footer className="relative z-10 mt-20" aria-label="footer">
       <div className="mx-auto max-w-[95%] px-0">
 
-        {/* FOOTER CARD */}
+        {/* ================= FOOTER CARD ================= */}
         <div
-  className="
-    rounded-[2.5rem]
-    bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.18),_rgba(16,185,129,0.22),_rgba(236,253,245,0.6))]
-    backdrop-blur-xl
-    border border-emerald-200/60
-    shadow-[0_20px_60px_rgba(16,185,129,0.18)]
-    pt-14 pb-8
-  "
->
-
+          className="
+            rounded-[2.5rem]
+            bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.18),_rgba(16,185,129,0.22),_rgba(236,253,245,0.6))]
+            backdrop-blur-xl
+            border border-emerald-200/60
+            shadow-[0_20px_60px_rgba(16,185,129,0.18)]
+            pt-14 pb-8
+          "
+        >
           <div className="px-6 space-y-10">
+
             {/* ================= TOP CTA ================= */}
             <div
               className="
-              rounded-3xl
-              bg-[#0071BC]
-              px-6 py-6
-              flex flex-col md:flex-row
-              items-center justify-between gap-4
-              shadow-lg
-            "
+                rounded-3xl
+                bg-[#0071BC]
+                px-6 py-6
+                flex flex-col md:flex-row
+                items-center justify-between gap-4
+                shadow-lg
+              "
             >
-              <h3 className="text-lg md:text-xl font-semibold text-white text-center md:text-left">
+              <h3 className="text-xl md:text-2xl font-semibold text-white text-center md:text-left">
                 Ready to grow smarter poultry farms with Aviquest?
               </h3>
 
               <button
                 aria-label="Schedule a call"
                 className="
-                inline-flex items-center gap-2
-                bg-white text-[#0071BC]
-                px-5 py-2.5 rounded-full
-                text-sm font-medium
-                hover:bg-slate-100
-                hover:scale-[1.02]
-                focus:outline-none focus:ring-2 focus:ring-white/60
-                transition
-              "
+                  inline-flex items-center gap-2
+                  bg-white text-[#0071BC]
+                  px-6 py-3 rounded-full
+                  text-base font-medium
+                  hover:bg-slate-100
+                  hover:scale-[1.03]
+                  transition
+                "
               >
                 Schedule a Call
-                <Phone size={15} />
+                <Phone size={18} />
               </button>
             </div>
 
             {/* ================= MAIN FOOTER ================= */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-              {/* LOGO BLOCK */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              {/* ================= LOGO BLOCK ================= */}
               <div
                 className="
-                rounded-2xl
-                bg-white/60
-                backdrop-blur-md
-                border border-emerald-200/60
-                flex items-center justify-center
-                p-4
-              "
+                  rounded-2xl
+                  bg-white/60
+                  backdrop-blur-md
+                  border border-emerald-200/60
+                  flex items-center justify-center
+                  p-4
+                "
               >
                 <img
                   src="/logo.png"
                   alt="Aviquest logo"
-                  className="w-full h-full object-contain max-h-32"
-                  loading="lazy"
+                  className="
+                    w-full
+                    h-full
+                    max-h-44
+                    object-contain
+                  "
                 />
               </div>
 
-              {/* LINKS + INFO */}
+              {/* ================= LINKS + INFO ================= */}
               <div
                 className="
-                md:col-span-2
-                rounded-2xl
-                bg-white/60
-                backdrop-blur-md
-                border border-emerald-200/60
-                p-6
-                flex flex-col justify-between
-              "
+                  md:col-span-2
+                  rounded-2xl
+                  bg-white/60
+                  backdrop-blur-md
+                  border border-emerald-200/60
+                  p-6
+                  flex flex-col justify-between
+                "
               >
-                {/* LINKS */}
-                <nav
-                  aria-label="Footer navigation"
-                  className="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6 text-sm text-slate-700"
-                >
-                  <a href="/" className="hover:text-[#0071BC] transition">
-                    Home
-                  </a>
-                  <a href="/about" className="hover:text-[#0071BC] transition">
-                    About
-                  </a>
-                  <a
-                    href="/products"
-                    className="hover:text-[#0071BC] transition"
-                  >
-                    Products
-                  </a>
-                  <a href="/blogs" className="hover:text-[#0071BC] transition">
-                    Blogs
-                  </a>
-                  <a
-                    href="/contact"
-                    className="hover:text-[#0071BC] transition"
-                  >
-                    Contact
-                  </a>
-                </nav>
+                {/* ================= FOOTER COLUMNS ================= */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
 
-                {/* CENTER BAR */}
-                <div className="mt-8 flex flex-col items-center gap-2 text-[11px] text-slate-500 text-center">
-                  <div className="flex flex-wrap items-center justify-center gap-2">
-                    <span>© {new Date().getFullYear()} Aviquest</span>
-                    <span className="opacity-50">•</span>
-                    <a href="#" className="hover:text-[#0071BC] transition">
-                      Terms
-                    </a>
-                    <span className="opacity-50">•</span>
-                    <a href="#" className="hover:text-[#0071BC] transition">
+                  {/* PAGES */}
+                  <div>
+                    <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
+                      Pages
+                    </h4>
+                    <ul className="space-y-3 text-[15px]">
+                      {["Home", "About", "Products", "Contact"].map((item) => (
+                        <li key={item}>
+                          <a
+                            href={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                            className="
+                              inline-block font-medium text-slate-700
+                              transition-all duration-200
+                              hover:text-[#0071BC]
+                              hover:-translate-y-[1px]
+                            "
+                          >
+                            {item}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* PRODUCTS */}
+                  <div>
+                    <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
+                      Products
+                    </h4>
+                    <ul className="space-y-3 text-[15px]">
+                      {[
+                        "Farm Management",
+                        "Health Tracking",
+                        "Feed Monitoring",
+                        "Analytics",
+                      ].map((item) => (
+                        <li key={item}>
+                          <a
+                            href="#"
+                            className="
+                              inline-block font-medium text-slate-700
+                              transition-all duration-200
+                              hover:text-[#0071BC]
+                              hover:-translate-y-[1px]
+                            "
+                          >
+                            {item}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CONTACT */}
+                  <div>
+                    <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
+                      Contact
+                    </h4>
+                    <ul className="space-y-3 text-[15px] text-slate-600">
+                      <li className="hover:text-[#0071BC] transition">
+                        Hyderabad, India
+                      </li>
+                      <li className="hover:text-[#0071BC] transition">
+                        +91 99999 99999
+                      </li>
+                      <li className="hover:text-[#0071BC] transition">
+                        info@aviquest.com
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* ================= CENTER BAR ================= */}
+                <div
+                  className="
+                    mt-10
+                    flex flex-col items-center gap-3
+                    text-[13px] font-medium text-slate-500
+                    md:flex-row md:justify-between
+                  "
+                >
+                  {/* LEFT */}
+                  <div className="flex gap-2">
+                    <a href="/privacy" className="hover:text-[#0071BC] transition">
                       Privacy
+                    </a>
+                    <span>•</span>
+                    <a href="/terms" className="hover:text-[#0071BC] transition">
+                      Terms
                     </a>
                   </div>
 
+                  {/* CENTER */}
+                  <div>
+                    © {new Date().getFullYear()} Aviquest
+                  </div>
+
+                  {/* RIGHT */}
                   <a
                     href="https://brick2tech.com"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 hover:text-[#0071BC] transition"
+                    rel="noreferrer"
+                    className="hover:text-[#0071BC] transition underline"
                   >
-                    <span>Designed by</span>
-                    <span className="font-medium">Brick2Tech</span>
+                    Designed by{" "}
+                    <span className="font-semibold">Brick2Tech</span>
                   </a>
                 </div>
               </div>
             </div>
 
             {/* ================= SOCIALS ================= */}
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-5">
               {[
-                {
-                  type: "lucide",
-                  icon: Facebook,
-                  href: "https://facebook.com",
-                  label: "Facebook",
-                },
-                {
-                  type: "lucide",
-                  icon: Instagram,
-                  href: "https://instagram.com",
-                  label: "Instagram",
-                },
-                {
-                  type: "image",
-                  icon: XIcon,
-                  href: "https://twitter.com",
-                  label: "X (Twitter)",
-                },
-                {
-                  type: "lucide",
-                  icon: Youtube,
-                  href: "https://youtube.com",
-                  label: "YouTube",
-                },
+                { icon: Facebook, link: "https://facebook.com" },
+                { icon: Instagram, link: "https://instagram.com" },
+                { icon: "x", link: "https://twitter.com" },
+                { icon: Youtube, link: "https://youtube.com" },
               ].map((item, i) => (
                 <a
                   key={i}
-                  href={item.href}
-                  aria-label={item.label}
+                  href={item.link}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                   className="
-                  h-11 w-11 rounded-full
-                  flex items-center justify-center
-                  bg-white/60 backdrop-blur-md
-                  border border-emerald-200/60
-                  text-[#0071BC]
-                  hover:bg-[#0071BC]
-                  hover:text-white
-                  hover:scale-105
-                  transition
-                "
+                    h-12 w-12
+                    rounded-full
+                    flex items-center justify-center
+                    bg-white/60 backdrop-blur-md
+                    border border-emerald-200/60
+                    text-[#0071BC]
+                    transition-all duration-300
+                    hover:bg-[#0071BC]
+                    hover:text-white
+                    hover:scale-110
+                  "
                 >
-                  {item.type === "lucide" ? (
-                    <item.icon size={18} />
+                  {item.icon === "x" ? (
+                    <img src={XIcon} alt="X" className="h-5 w-5" />
                   ) : (
-                    <img
-                      src={item.icon}
-                      alt="X"
-                      className="h-[18px] w-[18px]"
-                    />
+                    <item.icon size={22} />
                   )}
                 </a>
               ))}
             </div>
+
           </div>
         </div>
       </div>
