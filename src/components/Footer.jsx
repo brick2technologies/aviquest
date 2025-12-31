@@ -1,5 +1,7 @@
 import { Facebook, Instagram, Youtube, Phone } from "lucide-react";
 import XIcon from "/x-icon.svg";
+import { Link } from "react-router-dom";
+
 
 export default function Footer() {
   return (
@@ -162,32 +164,33 @@ export default function Footer() {
 
                   {/* PRODUCTS */}
                   <div>
-                    <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
-                      Products
-                    </h4>
-                    <ul className="space-y-3 text-[15px]">
-                      {[
-                        "Farm Management",
-                        "Health Tracking",
-                        "Feed Monitoring",
-                        "Analytics",
-                      ].map((item) => (
-                        <li key={item}>
-                          <a
-                            href="#"
-                            className="
-                inline-block font-medium text-slate-700
-                transition-all duration-200
-                hover:text-[#0071BC]
-                hover:-translate-y-[1px]
-              "
-                          >
-                            {item}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+  <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
+    Products
+  </h4>
+
+  <ul className="space-y-3 text-[15px]">
+    {[
+      { name: "CalciPro", slug: "calcipro" },
+      { name: "BioShield-X", slug: "bioshield-x" },
+      { name: "ShellGuard", slug: "shellguard" },
+      { name: "MinTreat", slug: "mintreat" },
+    ].map((item) => (
+      <li key={item.slug}>
+        <Link
+          to={`/products/${item.slug}`}
+          className="
+            inline-block font-medium text-slate-700
+            transition-all duration-200
+            hover:text-[#0071BC]
+            hover:-translate-y-[1px]
+          "
+        >
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
                   {/* CONTACT (FULL WIDTH ON MOBILE) */}
                   <div className="col-span-2 md:col-span-1">
