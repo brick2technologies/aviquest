@@ -35,7 +35,7 @@ export default function Navbar() {
           {/* ===== LEFT: MENU (MOBILE) / LOGO (DESKTOP) ===== */}
           <div className="font-chillax flex items-center">
             <button
-              className="md:hidden mr-2"
+              className="md:hidden mr-2 text-emerald-700 hover:text-green-600 transition"
               onClick={() => setOpen(!open)}
               aria-label="Menu"
             >

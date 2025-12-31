@@ -60,61 +60,115 @@ export default function ProductsPage() {
       {/* ================= PRODUCTS GRID ================= */}
       <section className="pb-32">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {products.map((product, i) => (
               <Motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: i * 0.06 }}
-                viewport={{ once: true }}
-                className="
-      group rounded-3xl 
-      bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.16),_rgba(16,185,129,0.22),_rgba(236,253,245,0.65))]
-        backdrop-blur-xl
-        border border-emerald-200/60
-        shadow-[0_20px_60px_rgba(16,185,129,0.18)] p-6
-      hover:shadow-xl
-      transition-all duration-300
-      flex flex-col
+  key={product.id}
+  initial={{ opacity: 0, y: 22 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.45, delay: i * 0.06 }}
+  viewport={{ once: true }}
+  className="
+    group
+    rounded-3xl
+    bg-[radial-gradient(ellipse_at_top,_rgba(0,113,188,0.16),_rgba(16,185,129,0.22),_rgba(236,253,245,0.65))]
+    backdrop-blur-xl
+    border border-emerald-200/60
+    shadow-[0_20px_60px_rgba(16,185,129,0.18)]
+    hover:shadow-xl
+    transition-all duration-300
+    flex flex-col
+    overflow-hidden
+  "
+>
+  {/* ================= IMAGE (TOP, ALIGNED) ================= */}
+  <div
+    className="
+      w-full
+      bg-white
+      pt-6 pb-4 px-6
+      rounded-t-3xl
+      flex items-center justify-center
     "
-              >
-                {/* Product Image */}
-                <div className="flex items-center justify-center h-44 rounded-2xl bg-slate-50 overflow-hidden">
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="
-          max-h-full max-w-full object-contain
-          transition-transform duration-300
-          group-hover:scale-105
+  >
+    <img
+      src={product.img}
+      alt={product.name}
+      className="
+        h-32
+        object-contain
+        transition-transform duration-300
+        group-hover:scale-105
+      "
+    />
+  </div>
+
+  {/* ================= CONTENT ================= */}
+  <div className="flex flex-col flex-1 px-6 pb-6">
+
+    {/* Product Name */}
+    <h3 className="mt-4 text-center text-lg font-semibold text-[#0071BC]">
+      {product.name}
+    </h3>
+
+    {/* Button */}
+    <div className="mt-auto pt-6 flex justify-center">
+      <Link
+        to={`/products/${product.id}`}
+        className="
+          inline-flex items-center justify-center
+          rounded-full
+          border border-[#0071BC]
+          px-6 py-2
+          text-sm font-medium
+          text-[#0071BC]
+          transition
+          hover:bg-[#0071BC]
+          hover:text-white
         "
-                  />
-                </div>
+      >
+        View Details
+      </Link>
+    </div>
+  </div>
+</Motion.div>
 
-                {/* Product Name */}
-                <h3 className="mt-6 text-center text-lg font-semibold text-slate-900">
-                  {product.name}
-                </h3>
+        //         {/* Product Image */}
+        //         <div className="flex items-center justify-center h-44 rounded-2xl bg-slate-50   ">
+        //           <img
+        //             src={product.img}
+        //             alt={product.name}
+        //             className="
+        //   max-h-full max-w-full object-cover
+        //   transition-transform duration-300
+        //   group-hover:scale-105
+        // "
+        //           />
+        //         </div>
 
-                {/* Button */}
-                <div className="mt-6 flex justify-center">
-                  <Link
-                    to={`/products/${product.id}`}
-                    className="
-                        inline-flex items-center justify-center
-                        rounded-full border border-[#0071BC]
-                        px-6 py-2 text-sm font-medium
-                        text-[#0071BC]
-                        transition
-                        hover:bg-[#0071BC]
-                        hover:text-white
-                        "
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </Motion.div>
+        //         {/* Product Name */}
+        //         <h3 className="mt-6 text-center text-lg font-semibold text-[#0071BC]">
+        //           {product.name}
+        //         </h3>
+
+        //         {/* Button */}
+        //         <div className="mt-6 flex justify-center">
+        //           <Link
+        //             to={`/products/${product.id}`}
+        //             className="
+        //                 inline-flex items-center justify-center
+        //                 rounded-full border border-[#0071BC]
+        //                 px-6 py-2 text-sm font-medium
+        //                 text-[#0071BC]
+        //                 transition
+        //                 hover:bg-[#0071BC]
+        //                 hover:text-white
+        //                 "
+        //           >
+        //             View Details
+        //           </Link>
+        //         </div>
+        //       </Motion.div>
             ))}
           </div>
         </div>

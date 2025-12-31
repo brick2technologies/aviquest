@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <footer className="relative z-10 mt-20" aria-label="footer">
       <div className="mx-auto max-w-[95%] px-0">
-
         {/* ================= FOOTER CARD ================= */}
         <div
           className="
@@ -18,7 +17,6 @@ export default function Footer() {
           "
         >
           <div className="px-6 space-y-10">
-
             {/* ================= TOP CTA ================= */}
             <div
               className="
@@ -53,45 +51,89 @@ export default function Footer() {
 
             {/* ================= MAIN FOOTER ================= */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
+              {/* ================= LOGO BLOCK ================= */}
               {/* ================= LOGO BLOCK ================= */}
               <div
                 className="
-                  rounded-2xl
-                  bg-white/60
-                  backdrop-blur-md
-                  border border-emerald-200/60
-                  flex items-center justify-center
-                  p-4
-                "
+    rounded-2xl
+    bg-white/60
+    backdrop-blur-md
+    border border-emerald-200/60
+    flex flex-col items-center
+    p-6
+    gap-5
+  "
               >
+                {/* LOGO */}
                 <img
                   src="/logo.png"
                   alt="Aviquest logo"
                   className="
-                    w-full
-                    h-full
-                    max-h-44
-                    object-contain
-                  "
+      w-full
+      max-h-40
+      object-cover
+    "
                 />
+
+                {/* SOCIAL ICONS (UNDER LOGO) */}
+                <div className="flex justify-center gap-4">
+                  {[
+                    { icon: Facebook, link: "https://facebook.com" },
+                    { icon: Instagram, link: "https://instagram.com" },
+                    { icon: "x", link: "https://twitter.com" },
+                    { icon: Youtube, link: "https://youtube.com" },
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="
+          h-11 w-11
+          rounded-full
+          flex items-center justify-center
+          bg-white/60 backdrop-blur-md
+          border border-emerald-200/60
+          text-[#0071BC]
+          transition-all duration-300
+          hover:bg-[#0071BC]
+          hover:text-white
+          hover:scale-110
+        "
+                    >
+                      {item.icon === "x" ? (
+                        <img src={XIcon} alt="X" className="h-5 w-5" />
+                      ) : (
+                        <item.icon size={20} />
+                      )}
+                    </a>
+                  ))}
+                </div>
               </div>
 
               {/* ================= LINKS + INFO ================= */}
               <div
                 className="
-                  md:col-span-2
-                  rounded-2xl
-                  bg-white/60
-                  backdrop-blur-md
-                  border border-emerald-200/60
-                  p-6
-                  flex flex-col justify-between
-                "
+    md:col-span-2
+    rounded-2xl
+    bg-white/60
+    backdrop-blur-md
+    border border-emerald-200/60
+    p-6
+    flex flex-col justify-between
+  "
               >
                 {/* ================= FOOTER COLUMNS ================= */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
-
+                <div
+                  className="
+      grid
+      grid-cols-2
+      gap-8
+      text-center
+      sm:text-left
+      md:grid-cols-3
+    "
+                >
                   {/* PAGES */}
                   <div>
                     <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
@@ -101,13 +143,15 @@ export default function Footer() {
                       {["Home", "About", "Products", "Contact"].map((item) => (
                         <li key={item}>
                           <a
-                            href={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                            href={`/${
+                              item === "Home" ? "" : item.toLowerCase()
+                            }`}
                             className="
-                              inline-block font-medium text-slate-700
-                              transition-all duration-200
-                              hover:text-[#0071BC]
-                              hover:-translate-y-[1px]
-                            "
+                inline-block font-medium text-slate-700
+                transition-all duration-200
+                hover:text-[#0071BC]
+                hover:-translate-y-[1px]
+              "
                           >
                             {item}
                           </a>
@@ -132,11 +176,11 @@ export default function Footer() {
                           <a
                             href="#"
                             className="
-                              inline-block font-medium text-slate-700
-                              transition-all duration-200
-                              hover:text-[#0071BC]
-                              hover:-translate-y-[1px]
-                            "
+                inline-block font-medium text-slate-700
+                transition-all duration-200
+                hover:text-[#0071BC]
+                hover:-translate-y-[1px]
+              "
                           >
                             {item}
                           </a>
@@ -145,8 +189,8 @@ export default function Footer() {
                     </ul>
                   </div>
 
-                  {/* CONTACT */}
-                  <div>
+                  {/* CONTACT (FULL WIDTH ON MOBILE) */}
+                  <div className="col-span-2 md:col-span-1">
                     <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
                       Contact
                     </h4>
@@ -167,26 +211,30 @@ export default function Footer() {
                 {/* ================= CENTER BAR ================= */}
                 <div
                   className="
-                    mt-10
-                    flex flex-col items-center gap-3
-                    text-[13px] font-medium text-slate-500
-                    md:flex-row md:justify-between
-                  "
+      mt-10
+      grid
+      grid-cols-2
+      gap-y-4
+      text-[13px] font-medium text-slate-500
+      text-center
+      md:flex md:items-center md:justify-between
+    "
                 >
                   {/* LEFT */}
-                  <div className="flex gap-2">
-                    <a href="/privacy" className="hover:text-[#0071BC] transition">
+                  <div className="flex justify-center gap-2 md:justify-start">
+                    <a
+                      href="/privacy"
+                      className="hover:text-[#0071BC] transition"
+                    >
                       Privacy
                     </a>
                     <span>•</span>
-                    <a href="/terms" className="hover:text-[#0071BC] transition">
+                    <a
+                      href="/terms"
+                      className="hover:text-[#0071BC] transition"
+                    >
                       Terms
                     </a>
-                  </div>
-
-                  {/* CENTER */}
-                  <div>
-                    © {new Date().getFullYear()} Aviquest
                   </div>
 
                   {/* RIGHT */}
@@ -199,45 +247,14 @@ export default function Footer() {
                     Designed by{" "}
                     <span className="font-semibold">Brick2Tech</span>
                   </a>
+
+                  {/* COPYRIGHT (FULL WIDTH, CENTERED) */}
+                  <div className="col-span-2">
+                    © {new Date().getFullYear()} Aviquest
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* ================= SOCIALS ================= */}
-            <div className="flex justify-center gap-5">
-              {[
-                { icon: Facebook, link: "https://facebook.com" },
-                { icon: Instagram, link: "https://instagram.com" },
-                { icon: "x", link: "https://twitter.com" },
-                { icon: Youtube, link: "https://youtube.com" },
-              ].map((item, i) => (
-                <a
-                  key={i}
-                  href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="
-                    h-12 w-12
-                    rounded-full
-                    flex items-center justify-center
-                    bg-white/60 backdrop-blur-md
-                    border border-emerald-200/60
-                    text-[#0071BC]
-                    transition-all duration-300
-                    hover:bg-[#0071BC]
-                    hover:text-white
-                    hover:scale-110
-                  "
-                >
-                  {item.icon === "x" ? (
-                    <img src={XIcon} alt="X" className="h-5 w-5" />
-                  ) : (
-                    <item.icon size={22} />
-                  )}
-                </a>
-              ))}
-            </div>
-
           </div>
         </div>
       </div>

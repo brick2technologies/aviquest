@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -25,11 +26,20 @@ const testimonials = [
 ];
 
 export default function TestimonialSection() {
+  const [index, setIndex] = useState(0);
+
+  const paginate = (dir: number) => {
+  setIndex((prev) =>
+    (prev + dir + testimonials.length) % testimonials.length
+  );
+};
+
+
   return (
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* ================= HEADER (CENTERED) ================= */}
+        {/* ================= HEADER ================= */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,23 +56,27 @@ export default function TestimonialSection() {
           </p>
         </motion.div>
 
-        {/* ================= TESTIMONIAL CARDS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {testimonials.map((item, index) => (
+        {/* ================= MOBILE CAROUSEL ================= */}
+        <div className="md:hidden relative overflow-hidden">
+          <AnimatePresence mode="wait">
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -80 }}
+              transition={{ duration: 0.4 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.8}
+              onDragEnd={(_, info) => {
+                if (info.offset.x < -80) paginate(1);
+                if (info.offset.x > 80) paginate(-1);
+              }}
               className="
-                relative
                 bg-white
                 border border-slate-200
                 rounded-2xl
                 p-8
-                transition
-                hover:border-[#0071BC]
               "
             >
               {/* Quote Icon */}
@@ -72,12 +86,66 @@ export default function TestimonialSection() {
                 </div>
               </div>
 
-              {/* Quote */}
+              <p className="text-slate-700 leading-relaxed mb-8">
+                {testimonials[index].quote}
+              </p>
+
+              <div className="pt-4 border-t border-slate-100">
+                <p className="font-medium text-slate-900">
+                  {testimonials[index].name}
+                </p>
+                <p className="text-sm text-[#336600]">
+                  {testimonials[index].role} ·{" "}
+                  {testimonials[index].location}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* DOTS */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`h-2.5 w-2.5 rounded-full transition ${
+                  i === index
+                    ? "bg-[#0071BC]"
+                    : "bg-slate-300"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* ================= DESKTOP GRID ================= */}
+        <div className="hidden md:grid grid-cols-3 gap-10">
+          {testimonials.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="
+                bg-white
+                border border-slate-200
+                rounded-2xl
+                p-8
+                transition
+                hover:border-[#0071BC]
+              "
+            >
+              <div className="mb-6">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#0071BC]/10 text-[#0071BC] text-xl font-bold">
+                  “
+                </div>
+              </div>
+
               <p className="text-slate-700 leading-relaxed mb-8">
                 {item.quote}
               </p>
 
-              {/* Footer */}
               <div className="pt-4 border-t border-slate-100">
                 <p className="font-medium text-slate-900">
                   {item.name}
@@ -86,8 +154,6 @@ export default function TestimonialSection() {
                   {item.role} · {item.location}
                 </p>
               </div>
-
-              
             </motion.div>
           ))}
         </div>

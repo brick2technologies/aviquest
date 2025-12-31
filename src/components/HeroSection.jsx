@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeroSection() {
   return (
     <section
@@ -82,13 +84,16 @@ export default function HeroSection() {
               </p>
 
               <div className="mt-7 flex flex-wrap gap-4">
+                <Link to="/products">
                 <button className="px-7 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 transition font-medium">
                   Explore Products
                 </button>
-
+                </Link>
+                <Link to="/about">
                 <button className="px-7 py-3 rounded-full border border-white/60 hover:bg-white/10 transition">
                   Learn More
                 </button>
+                </Link>
               </div>
             </div>
           </div>
