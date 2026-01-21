@@ -136,27 +136,61 @@ export default function ProductDetailPage() {
 
           {/* ===== Recommendation ===== */}
           {activeSection === "dosage" && product.administration && (
-            <ContentSection title="Recommedation">
-              <ul className="space-y-3 list-disc pl-6 text-slate-700 leading-relaxed">
+            <ContentSection title="Recommendation">
+              <div className="space-y-4 text-slate-700 leading-relaxed">
                 {product.administration
                   .split("\n")
-                  .filter(Boolean)
+                  .filter((line) => line.trim() !== "") // remove empty lines
                   .map((line, i) => {
-                    const [title, description] = line.split(":");
+                    // Handle lines like "1. Something:" or "Layers:" or just plain text
+                    const trimmed = line.trim();
 
+                    // Check if it's a numbered/main heading (e.g. "1. Maintenance of...")
+                    const isSectionHeading = /^\d+\.\s/.test(trimmed);
+
+                    // Try to split on first colon
+                    const colonIndex = trimmed.indexOf(":");
+                    const hasColon = colonIndex !== -1;
+
+                    if (hasColon) {
+                      const title = trimmed.substring(0, colonIndex + 1).trim(); // include colon
+                      const description = trimmed
+                        .substring(colonIndex + 1)
+                        .trim();
+
+                      return (
+                        <div key={i} className={isSectionHeading ? "mt-6" : ""}>
+                          {isSectionHeading ? (
+                            <h4 className="font-semibold text-slate-900 mb-2">
+                              {title}
+                            </h4>
+                          ) : (
+                            <p>
+                              <strong className="text-slate-900">
+                                {title}
+                              </strong>
+                              {description && (
+                                <span className="ml-1.5">{description}</span>
+                              )}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    }
+
+                    // Fallback: no colon → treat as regular line (e.g. "Or as recommended...")
                     return (
-                      <li key={i}>
-                        <strong className="text-slate-900">{title}:</strong>
-                        {description && (
-                          <span className="ml-1">{description}</span>
-                        )}
-                      </li>
+                      <p
+                        key={i}
+                        className={isSectionHeading ? "font-semibold mt-4" : ""}
+                      >
+                        {trimmed}
+                      </p>
                     );
                   })}
-              </ul>
+              </div>
             </ContentSection>
           )}
-
           {/* ===== PRESENTATION (UPDATED) ===== */}
           {activeSection === "presentation" && product.presentation && (
             <ContentSection title="Presentation">
@@ -182,9 +216,7 @@ export default function ProductDetailPage() {
                 {product.presentation.storage && (
                   <li>
                     <strong className="text-slate-900">Storage:</strong>
-                    <span className="ml-1">
-                      {product.presentation.storage}
-                    </span>
+                    <span className="ml-1">{product.presentation.storage}</span>
                   </li>
                 )}
               </ul>

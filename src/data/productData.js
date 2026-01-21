@@ -3,9 +3,7 @@ import Prod2 from "../assets/products/bioshield.png";
 import Prod3 from "../assets/products/shellguard.png";
 import Prod4 from "../assets/products/mintrust.png";
 import Prod5 from "../assets/products/enzyplus.png";
-
 import Prod7 from "../assets/products/phytacare.png";
-
 import Prod9 from "../assets/products/calcipro-liquid.png";
 import Prod10 from "../assets/products/preciliv.png";
 import Prod11 from "../assets/products/mintrust-l.png";
@@ -14,7 +12,7 @@ export const productData = {
   "mintrust-l": {
     id: "mintrust-l",
     name: "Mintrust-L",
-    img: Prod11, // replace with correct image import
+    img: Prod11,
     category: "Nutrition",
 
     description:
@@ -31,23 +29,19 @@ export const productData = {
     ],
 
     administration:
-      "Layers: 1 Kg per ton of feed\nBreeders: 2 Kg per ton of feed\nBroilers: 1 Kg per ton of feed",
+      "Layers: 1 Kg per ton of feed\nBreeders: 2 Kg per ton of feed\nBroilers: 1 Kg per ton of feed\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Mintrust-L is available as a 25 Kg bag.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "25 Kg bag.",
+      storage: "Store in a cool & dry place."
     }
   },
-
 
   "mintrust-p": {
     id: "mintrust-p",
     name: "Mintrust-P",
-    img: Prod4, // replace with correct image import
+    img: Prod4,
     category: "Nutrition",
 
     description:
@@ -64,22 +58,19 @@ export const productData = {
     ],
 
     administration:
-      "Layers: 0.5 Kg per ton of feed\nBreeders: 1 Kg per ton of feed\nBroilers: 0.5 Kg per ton of feed",
+      "Layers: 0.5 Kg per ton of feed\nBreeders: 1 Kg per ton of feed\nBroilers: 0.5 Kg per ton of feed\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Mintrust-P is available as a 25 Kg bag.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "25 Kg bag.",
+      storage: "Store in a cool & dry place."
     }
   },
 
   "calcipro-liquid": {
     id: "calcipro-liquid",
     name: "Calcipro Liquid",
-    img: Prod9, // replace with correct image import
+    img: Prod9,
     category: "Nutrition",
 
     description:
@@ -94,25 +85,19 @@ export const productData = {
     ],
 
     administration:
-      "Chicks: 2 ml per 100 birds\nLayers & Breeders: 10–20 ml per 100 birds\nBroilers: 5 ml per 100 birds",
+      "Chicks: 2 ml per 100 birds\nLayers & Breeders: 10–20 ml per 100 birds\nBroilers: 5 ml per 100 birds\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Calcipro Liquid is available as 1 Ltr, 5 Ltr, and 20 Ltr jars.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "1 Ltr, 5 Ltr, and 20 Ltr jars.",
+      storage: "Store in a cool & dry place."
     }
   },
-
-
-
 
   "calcipro-granules": {
     id: "calcipro-granules",
     name: "Calcipro Granules",
-    img: Prod1, // replace with correct image import
+    img: Prod1,
     category: "Nutrition",
 
     description:
@@ -127,25 +112,19 @@ export const productData = {
     ],
 
     administration:
-      "500–1000 gm per ton of feed",
+      "500–1000 gm per ton of feed\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Calcipro Granules is available as a 25 Kg bag.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "25 Kg bag.",
+      storage: "Store in a cool & dry place."
     }
   },
-
-
-
 
   "bioshield-x": {
     id: "bioshield-x",
     name: "Bioshield-X",
-    img: Prod2, // replace with correct image import
+    img: Prod2,
     category: "Nutrition",
 
     description:
@@ -161,23 +140,19 @@ export const productData = {
     ],
 
     administration:
-      "1. Maintenance of intestinal health and functional gut stability:\nPowder: 250–500 gm per ton of feed\nLiquid: 5–10 ml per 100 birds per day or 0.5–1 ml per litre of drinking water\nUsage: Routine, long-term inclusion\n\n2. Adjunct support during bacterial infections and lipid-enveloped viral challenges:\nPowder: 2–5 Kg per ton of feed\nLiquid: 20–30 ml per 100 birds per day or 2–3 ml per litre of drinking water\nDuration: 5–7 days or as advised by the veterinarian\n\n3. Support of innate immune competence:\nPowder: 500–750 gm per ton of feed\nLiquid: 10 ml per 100 birds per day or 1 ml per litre of drinking water\nUsage: During immune stress or recovery periods\n\n4. Antibiotic-reduction & residue-free production programs:\nPowder: 500–1000 gm per ton of feed\nLiquid: 10–20 ml per 100 birds per day or 1–2 ml per litre of drinking water\nUsage: Continuous or cyclic\n\n5. During vaccination and dietary transitions:\nPowder: 500 gm per ton of feed\nLiquid: 10–20 ml per 100 birds per day or 1–2 ml per litre of drinking water\nUsage: 3–5 days before and after vaccination or feed change\n\n6. During physiological, environmental, and management stress:\nPowder: 1000 gm per ton of feed\nLiquid: 10–20 ml per 100 birds per day or 1–2 ml per litre of drinking water",
+      "1. Maintenance of intestinal health and functional gut stability:\nPowder: 250–500 gm per ton of feed\nLiquid: 5–10 ml per 100 birds per day or 0.5–1 ml per litre of drinking water\nUsage: Routine, long-term inclusion\n\n2. Adjunct support during bacterial infections and lipid-enveloped viral challenges:\nPowder: 2–5 Kg per ton of feed\nLiquid: 20–30 ml per 100 birds per day or 2–3 ml per litre of drinking water\nDuration: 5–7 days or as advised by the veterinarian\n\n3. Support of innate immune competence:\nPowder: 500–750 gm per ton of feed\nLiquid: 10 ml per 100 birds per day or 1 ml per litre of drinking water\nUsage: During immune stress or recovery periods\n\n4. Antibiotic-reduction & residue-free production programs:\nPowder: 500–1000 gm per ton of feed\nLiquid: 10–20 ml per 100 birds per day or 1–2 ml per litre of drinking water\nUsage: Continuous or cyclic\n\n5. During vaccination and dietary transitions:\nPowder: 500 gm per ton of feed\nLiquid: 10–20 ml per 100 birds per day or 1–2 ml per litre of drinking water\nUsage: 3–5 days before and after vaccination or feed change\n\n6. During physiological, environmental, and management stress:\nPowder: 1000 gm per ton of feed\nLiquid: 10–20 ml per 100 birds per day or 1–2 ml per litre of drinking water\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Powder: 25 Kg bag (25 × 1 Kg). Liquid: 1 Ltr, 5 Ltr, and 20 Ltr jars.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "Powder: 25 Kg bag (25 × 1 Kg). Liquid: 1 Ltr, 5 Ltr, and 20 Ltr jars.",
+      storage: "Store in a cool & dry place."
     }
   },
-
 
   "shellguard": {
     id: "shellguard",
     name: "Shellguard",
-    img: Prod3, // replace with correct image import
+    img: Prod3,
     category: "Nutrition",
 
     description:
@@ -193,25 +168,20 @@ export const productData = {
     ],
 
     administration:
-      "Liquid:\nLayers: 20–25 ml per 100 birds for 5–7 days\nBreeders: 40–50 ml per 100 birds for 5–7 days\n\nPowder:\nLayers: 250 gm per ton of feed\nBreeders: 500 gm per ton of feed",
+      "Liquid:\nLayers: 20–25 ml per 100 birds for 5–7 days\nBreeders: 40–50 ml per 100 birds for 5–7 days\n\n" +
+      "Powder:\nLayers: 250 gm per ton of feed\nBreeders: 500 gm per ton of feed\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Powder: Shellguard Powder is available as 25 Kg bag (5 × 5 Kg). Liquid: Shellguard Liquid is available as 1 Ltr, 5 Ltr, and 20 Ltr jars.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "Powder: 25 Kg bag (5 × 5 Kg). Liquid: 1 Ltr, 5 Ltr, and 20 Ltr jars.",
+      storage: "Store in a cool & dry place."
     }
   },
-
-
-
 
   "enzyplus-p": {
     id: "enzyplus-p",
     name: "Enzyplus-P",
-    img: Prod5, // replace with correct image import
+    img: Prod5,
     category: "Nutrition",
 
     description:
@@ -231,22 +201,19 @@ export const productData = {
     ],
 
     administration:
-      "250 grams per ton of feed. Dosage may vary depending on feed formulation or as suggested by the veterinarian.",
+      "250 grams per ton of feed. Dosage may vary depending on feed formulation or as suggested by the veterinarian.\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Enzyplus-P is available as 25 × 1 Kg pouches packed in a 25 Kg bag.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "25 × 1 Kg pouches packed in a 25 Kg bag.",
+      storage: "Store in a cool & dry place."
     }
   },
 
   "preci-liv": {
     id: "preci-liv",
     name: "Preciliv",
-    img: Prod10, // replace with correct image import
+    img: Prod10,
     category: "Nutrition",
 
     description:
@@ -266,24 +233,21 @@ export const productData = {
     ],
 
     administration:
-      "Liquid:\nBroilers & Layers: 20–25 ml per 100 birds\nBreeders: 40–50 ml per 100 birds\n\nPowder:\nBroilers & Layers: 500–1000 gm per ton of feed\nBreeders: 1000–2000 gm per ton of feed\n\nOr as recommended by the visiting veterinarian.",
+      "Liquid:\nBroilers & Layers: 20–25 ml per 100 birds\nBreeders: 40–50 ml per 100 birds\n\n" +
+      "Powder:\nBroilers & Layers: 500–1000 gm per ton of feed\nBreeders: 1000–2000 gm per ton of feed\n\n" +
+      "Or as recommended by the visiting veterinarian.\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Liquid: Preciliv liquid is available as 1 Ltr, 5 Ltr, and 25 Ltr jars. Powder: Preciliv powder is available as 25 Kg bags.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "Liquid: 1 Ltr, 5 Ltr, and 25 Ltr jars. Powder: 25 Kg bags.",
+      storage: "Store in a cool & dry place."
     }
   },
-
-
 
   "phytacare": {
     id: "phytacare",
     name: "Phytacare",
-    img: Prod7, // replace with correct image import
+    img: Prod7,
     category: "Nutrition",
 
     description:
@@ -298,15 +262,12 @@ export const productData = {
     ],
 
     administration:
-      "100–200 grams per ton of feed, depending on feed formulation and phosphorus content, or as suggested by the veterinarian.",
+      "100–200 grams per ton of feed, depending on feed formulation and phosphorus content, or as suggested by the veterinarian.\n\n" +
+      "Note: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      availability:
-        "Phytacare is available as 25 × 1 Kg pouches packed in a 25 Kg bag.",
-      disclaimer:
-        "The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
-      storage:
-        "Store in a cool & dry place."
+      packSize: "25 × 1 Kg pouches packed in a 25 Kg bag.",
+      storage: "Store in a cool & dry place."
     }
   }
 };
