@@ -4,8 +4,8 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ProductSection from "../components/ProductSection";
 import ClientsSection from "../components/ClientsSection";
-import TestimonialSection from "../components/TestimonialSection";
-import BlogSection from "../components/Blogsection";
+// import TestimonialSection from "../components/TestimonialSection";
+// import BlogSection from "../components/Blogsection";
 
 export default function HomePage() {
   return (
@@ -21,8 +21,8 @@ export default function HomePage() {
         <AboutSection />
         <ProductSection />
         <ClientsSection />
-        <TestimonialSection />
-        <BlogSection />
+        {/* <TestimonialSection /> */}
+        {/* <BlogSection /> */}
       </main>
     </>
   );

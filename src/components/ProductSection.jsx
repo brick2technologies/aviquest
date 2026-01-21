@@ -1,25 +1,34 @@
 import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import Prod1 from "../assets/products/calcipro.png";
+import Prod1 from "../assets/products/calcipro-granules.png";
 import Prod2 from "../assets/products/bioshield.png";
 import Prod3 from "../assets/products/shellguard.png";
-import Prod4 from "../assets/products/mintreat.png";
+import Prod4 from "../assets/products/mintrust.png";
 import Prod5 from "../assets/products/enzyplus.png";
-import Prod6 from "../assets/products/aqsan.png";
+
 import Prod7 from "../assets/products/phytacare.png";
+
+import Prod9 from "../assets/products/calcipro-liquid.png";
+import Prod10 from "../assets/products/preciliv.png";
+import Prod11 from "../assets/products/mintrust-l.png";
 
 export default function ProductsSection() {
   const products = [
-    { id: "calcipro", name: "CalciPro", img: Prod1 },
-    { id: "bioshield-x", name: "BioShield-X", img: Prod2 },
-    { id: "shellguard", name: "ShellGuard", img: Prod3 },
-    { id: "mintreat", name: "MinTreat", img: Prod4 },
-    { id: "enzyplus-p", name: "EnzyPlus", img: Prod5 },
-    { id: "aq-san", name: "Aq San", img: Prod6 },
-    { id: "phytacare", name: "PhytaCare", img: Prod7 },
-  ];
+ 
+  { id: "calcipro-granules", name: "CalciPro Granules", img: Prod1 },
+  { id: "bioshield-x", name: "BioShield-X", img: Prod2 },
+  { id: "shellguard", name: "ShellGuard", img: Prod3 },
+  { id: "mintreat", name: "MinTrust P", img: Prod4 },
+  { id: "enzyplus", name: "EnzyPlus", img: Prod5 },
 
+  { id: "phytacare", name: "PhytaCare", img: Prod7 },
+  { id: "calcipro-liquid", name: "CalciPro Liquid", img: Prod9 },
+  { id: "preci-liv", name: "Preci Liv", img: Prod10 },
+  { id: "mintrust-l", name: "MinTrust L", img: Prod11 },
+
+  //   { id: "aq-mix", name: "Aq Mix", img: Prod8 },
+];
   return (
     <section className="bg-white py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -44,7 +53,7 @@ export default function ProductsSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <Motion.div
               key={product.id}

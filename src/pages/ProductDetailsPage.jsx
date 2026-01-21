@@ -21,11 +21,9 @@ export default function ProductDetailPage() {
 
   return (
     <main className="bg-white text-slate-800">
-
       {/* ================= HERO ================= */}
       <section className="pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-6 grid gap-14 md:grid-cols-2 items-center">
-
           {/* Image */}
           <Motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -46,15 +44,9 @@ export default function ProductDetailPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* 🔙 Back Button */}
             <Link
               to="/products"
-              className="
-                inline-flex items-center gap-2
-                text-sm font-medium text-[#0071BC]
-                hover:text-[#005FA3]
-                mb-4
-              "
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#0071BC] hover:text-[#005FA3] mb-4"
             >
               ← Back to Products
             </Link>
@@ -67,7 +59,6 @@ export default function ProductDetailPage() {
               {product.description}
             </p>
           </Motion.div>
-
         </div>
       </section>
 
@@ -75,7 +66,6 @@ export default function ProductDetailPage() {
       <div className="font-chillax sticky top-24 z-30 bg-white">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center">
           <div className="flex gap-2 rounded-full bg-white border border-slate-200 shadow-sm px-2 py-2">
-
             {product.benefits && (
               <TabButton
                 label="Benefits"
@@ -94,28 +84,20 @@ export default function ProductDetailPage() {
 
             {product.administration && (
               <TabButton
-                label="Dosage"
+                label="Recommendation"
                 active={activeSection === "dosage"}
                 onClick={() => setActiveSection("dosage")}
               />
             )}
 
-            {product.presentation && (
-              <TabButton
-                label="Presentation"
-                active={activeSection === "presentation"}
-                onClick={() => setActiveSection("presentation")}
-              />
-            )}
-
-            {product.instructions && (
-              <TabButton
-                label="Storage"
-                active={activeSection === "storage"}
-                onClick={() => setActiveSection("storage")}
-              />
-            )}
-
+            {product.presentation &&
+              Object.values(product.presentation).some(Boolean) && (
+                <TabButton
+                  label="Presentation"
+                  active={activeSection === "presentation"}
+                  onClick={() => setActiveSection("presentation")}
+                />
+              )}
           </div>
         </div>
       </div>
@@ -123,7 +105,6 @@ export default function ProductDetailPage() {
       {/* ================= TAB CONTENT ================= */}
       <section className="pb-32 pt-20">
         <div className="max-w-5xl mx-auto px-6">
-
           {/* ===== BENEFITS ===== */}
           {activeSection === "benefits" && product.benefits && (
             <ContentSection title="Key Benefits">
@@ -134,7 +115,9 @@ export default function ProductDetailPage() {
                   return (
                     <li key={i}>
                       <strong className="text-slate-900">{title}:</strong>
-                      {description && <span className="ml-1">{description}</span>}
+                      {description && (
+                        <span className="ml-1">{description}</span>
+                      )}
                     </li>
                   );
                 })}
@@ -151,9 +134,9 @@ export default function ProductDetailPage() {
             </ContentSection>
           )}
 
-          {/* ===== DOSAGE (FIXED) ===== */}
+          {/* ===== Recommendation ===== */}
           {activeSection === "dosage" && product.administration && (
-            <ContentSection title="Administration & Dosage">
+            <ContentSection title="Recommedation">
               <ul className="space-y-3 list-disc pl-6 text-slate-700 leading-relaxed">
                 {product.administration
                   .split("\n")
@@ -164,7 +147,9 @@ export default function ProductDetailPage() {
                     return (
                       <li key={i}>
                         <strong className="text-slate-900">{title}:</strong>
-                        {description && <span className="ml-1">{description}</span>}
+                        {description && (
+                          <span className="ml-1">{description}</span>
+                        )}
                       </li>
                     );
                   })}
@@ -172,27 +157,41 @@ export default function ProductDetailPage() {
             </ContentSection>
           )}
 
-          {/* ===== PRESENTATION ===== */}
+          {/* ===== PRESENTATION (UPDATED) ===== */}
           {activeSection === "presentation" && product.presentation && (
             <ContentSection title="Presentation">
-              <p className="text-slate-700 whitespace-pre-line">
-                {product.presentation}
-              </p>
+              <ul className="space-y-4 text-slate-700 leading-relaxed">
+                {product.presentation.availability && (
+                  <li>
+                    <strong className="text-slate-900">Availability:</strong>
+                    <span className="ml-1">
+                      {product.presentation.availability}
+                    </span>
+                  </li>
+                )}
+
+                {product.presentation.disclaimer && (
+                  <li>
+                    <strong className="text-slate-900">Disclaimer:</strong>
+                    <span className="ml-1">
+                      {product.presentation.disclaimer}
+                    </span>
+                  </li>
+                )}
+
+                {product.presentation.storage && (
+                  <li>
+                    <strong className="text-slate-900">Storage:</strong>
+                    <span className="ml-1">
+                      {product.presentation.storage}
+                    </span>
+                  </li>
+                )}
+              </ul>
             </ContentSection>
           )}
-
-          {/* ===== STORAGE ===== */}
-          {activeSection === "storage" && product.instructions && (
-            <ContentSection title="Instructions & Storage">
-              <p className="text-slate-700 whitespace-pre-line">
-                {product.instructions}
-              </p>
-            </ContentSection>
-          )}
-
         </div>
       </section>
-
     </main>
   );
 }
@@ -204,9 +203,11 @@ function TabButton({ label, active, onClick }) {
       onClick={onClick}
       className={`
         rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300
-        ${active
-          ? "bg-[#0071BC] text-white shadow-md"
-          : "text-slate-600 hover:text-[#0071BC] hover:bg-slate-100"}
+        ${
+          active
+            ? "bg-[#0071BC] text-white shadow-md"
+            : "text-slate-600 hover:text-[#0071BC] hover:bg-slate-100"
+        }
       `}
     >
       {label}
@@ -221,12 +222,7 @@ function ContentSection({ title, children }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="
-        rounded-3xl
-        border border-slate-200
-        bg-slate-50
-        p-8 sm:p-10
-      "
+      className="rounded-3xl border border-slate-200 bg-slate-50 p-8 sm:p-10"
     >
       <h2 className="font-chillax mb-6 text-2xl sm:text-3xl font-semibold text-[#0071BC]">
         {title}

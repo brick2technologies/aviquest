@@ -8,8 +8,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProductPage from "./pages/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailsPage";
-import BlogsPage from "./pages/BlogsPage";
-import BlogDetailPage from "./pages/BlogdetailsPage";
+// import BlogsPage from "./pages/BlogsPage";
+// import BlogDetailPage from "./pages/BlogdetailsPage";
 import ContactPage from "./pages/ContactPage";
 import SocialSideBar from "./components/SocailSidebar";
 
@@ -28,8 +28,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/products/:productId" element={<ProductDetailPage />} />
-        <Route path="/blogs" element={<BlogsPage />} />
-        <Route path="/blogs/:blogId" element={<BlogDetailPage />} />
+        {/* <Route path="/blogs" element={<BlogsPage />} /> */}
+        {/* <Route path="/blogs/:blogId" element={<BlogDetailPage />} /> */}
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
 
