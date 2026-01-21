@@ -169,10 +169,10 @@ export default function Footer() {
 
                     <ul className="space-y-3 text-[15px]">
                       {[
-                        { name: "CalciPro", slug: "calcipro" },
+                        { name: "CalciPro Liquid", slug: "calcipro-liquid" },
                         { name: "BioShield-X", slug: "bioshield-x" },
                         { name: "ShellGuard", slug: "shellguard" },
-                        { name: "MinTreat", slug: "mintreat" },
+                        { name: "MinTrust P", slug: "mintrust-p" },
                       ].map((item) => (
                         <li key={item.slug}>
                           <Link
