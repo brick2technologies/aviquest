@@ -201,7 +201,7 @@ export default function Footer() {
                         Hyderabad, India
                       </li>
                       <li className="hover:text-[#0071BC] transition">
-                        +91 79952 35959
+                        +91 74165 97767
                       </li>
                       <li className="hover:text-[#0071BC] transition">
                         Connect@aviquesthealthcare.com
