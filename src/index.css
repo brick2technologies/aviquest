@@ -8,11 +8,17 @@ html {
 }
 
 @theme {
-  --animate-gradient-slow: gradient-shift 12s ease infinite;
+  --animate-gradient-move: gradient-shift 15s ease infinite;
+  --animate-pulse-slow: pulse-opacity 8s ease-in-out infinite;
 
   @keyframes gradient-shift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+  }
+
+  @keyframes pulse-opacity {
+    0%, 100% { opacity: 0.05; }
+    50% { opacity: 0.12; }
   }
 }
 

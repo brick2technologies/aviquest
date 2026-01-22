@@ -50,13 +50,19 @@ export default function HeroSection() {
       <div className="mx-auto max-w-[95%] h-full">
         <div className="relative h-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
           
-          {/* MOVING GRADIENT LAYER */}
+          {/* BASE GRADIENT LAYER */}
+          <div className="absolute inset-0 z-0 animate-gradient-move bg-[length:400%_400%] bg-gradient-to-br from-emerald-800 via-blue-900 to-emerald-700" />
+
+          {/* CHICK & EGG PATTERN OVERLAY */}
           <div 
-            className="absolute inset-0 z-0 animate-gradient-move bg-[length:400%_400%] bg-gradient-to-br from-emerald-800 via-blue-900 to-emerald-700" 
+            className="absolute inset-0 z-1 opacity-[0.07] mix-blend-overlay pointer-events-none animate-pulse-slow"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm30 30c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zM10 40c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm35-25c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'/%3E%3Ccircle cx='45' cy='10' r='2'/%3E%3Ccircle cx='15' cy='50' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
           />
 
-          {/* SOFT GLASS OVERLAY */}
-          <div className="absolute inset-0 z-1 bg-black/20 backdrop-blur-[1px]" />
+          {/* DARK VIGNETTE (For readability) */}
+          <div className="absolute inset-0 z-2 bg-radial-gradient from-transparent via-black/10 to-black/40" />
 
           <div className="relative z-10 h-full overflow-hidden">
             <div
@@ -70,21 +76,17 @@ export default function HeroSection() {
               {extendedSlides.map((slide, i) => (
                 <div key={i} className="min-w-full h-full flex items-center justify-center relative">
                   <div className="px-6 md:px-20 max-w-4xl text-white text-center z-20">
-                    {/* TYPOGRAPHY ENHANCEMENTS */}
-                    <h1 className="font-chillax text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.1] tracking-tight drop-shadow-lg">
+                    <h1 className="font-chillax text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.1] tracking-tight drop-shadow-2xl">
                       {slide.title}
                     </h1>
-                    
-                    <p className="mt-6 mx-auto max-w-2xl text-white/80 text-base md:text-xl font-light leading-relaxed drop-shadow-md">
+                    <p className="mt-6 mx-auto max-w-2xl text-white/90 text-lg md:text-xl font-light leading-relaxed drop-shadow-lg">
                       {slide.description}
                     </p>
-
                     {slide.cta && (
-                      <div className="mt-10 flex flex-wrap gap-4 justify-center">
+                      <div className="mt-10">
                         <Link to="/products">
-                          <button className="group relative px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-emerald-500/40 cursor-pointer overflow-hidden">
-                            <span className="relative z-10">Explore Products</span>
-                            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                          <button className="px-10 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white transition-all duration-300 font-bold text-lg shadow-xl cursor-pointer">
+                            Explore Products
                           </button>
                         </Link>
                       </div>
@@ -93,22 +95,6 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* REFINED DOTS PAGINATION */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => { setIsTransitioning(true); setIndex(i + 1); }}
-                className={`transition-all duration-500 cursor-pointer ${
-                  (index === i + 1 || (index === 0 && i === slides.length - 1) || (index === extendedSlides.length - 1 && i === 0)) 
-                    ? "bg-white w-10 h-1.5 rounded-full" 
-                    : "bg-white/30 w-2 h-2 rounded-full hover:bg-white/60"
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
           </div>
         </div>
       </div>
