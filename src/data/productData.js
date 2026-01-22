@@ -116,7 +116,7 @@ export const productData = {
       "Disclaimer: The dosage and usage suggested are based on research and field experience and may be adjusted according to flock conditions or the advice of the visiting veterinarian.",
 
     presentation: {
-      packSize: "Calcipro Granules is available as 25 Kg Bag.",
+      packSize: "Calcipro Granules is available as 25 Kg Bag",
       storage: "Store in a cool & dry place."
     }
   },

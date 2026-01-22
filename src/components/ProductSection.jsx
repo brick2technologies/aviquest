@@ -16,16 +16,16 @@ import Prod11 from "../assets/products/mintrust-l.png";
 export default function ProductsSection() {
   const products = [
  
-  { id: "calcipro-granules", name: "CalciPro Granules", img: Prod1 },
-  { id: "bioshield-x", name: "BioShield-X", img: Prod2 },
-  { id: "shellguard", name: "ShellGuard", img: Prod3 },
-  { id: "mintreat", name: "MinTrust P", img: Prod4 },
-  { id: "enzyplus", name: "EnzyPlus", img: Prod5 },
+  { id: "calcipro-granules", name: "CALCIPRO GRANULES", img: Prod1 },
+  { id: "bioshield-x", name: "BIOSHIELD-X", img: Prod2 },
+  { id: "shellguard", name: "SHELLGUARD", img: Prod3 },
+  { id: "mintrust-p", name: "MINTRUST-P", img: Prod4 },
+  { id: "enzyplus", name: "ENZYPLUS", img: Prod5 },
 
-  { id: "phytacare", name: "PhytaCare", img: Prod7 },
-  { id: "calcipro-liquid", name: "CalciPro Liquid", img: Prod9 },
-  { id: "preci-liv", name: "Preci Liv", img: Prod10 },
-  { id: "mintrust-l", name: "MinTrust L", img: Prod11 },
+  { id: "phytacare", name: "PHYTACARE", img: Prod7 },
+  { id: "calcipro-liquid", name: "CALCIPRO LIQUID", img: Prod9 },
+  { id: "preci-liv", name: "PRECI LIV", img: Prod10 },
+  { id: "mintrust-l", name: "MINTRUST-L", img: Prod11 },
 
   //   { id: "aq-mix", name: "Aq Mix", img: Prod8 },
 ];

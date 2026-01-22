@@ -125,90 +125,50 @@ export default function Footer() {
   "
               >
                 {/* ================= FOOTER COLUMNS ================= */}
-                <div
-                  className="
-      grid
-      grid-cols-2
-      gap-8
-      text-center
-      sm:text-left
-      md:grid-cols-3
-    "
-                >
-                  {/* PAGES */}
-                  <div>
-                    <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
-                      Pages
-                    </h4>
-                    <ul className="space-y-3 text-[15px]">
-                      {["Home", "About", "Products", "Contact"].map((item) => (
-                        <li key={item}>
-                          <a
-                            href={`/${
-                              item === "Home" ? "" : item.toLowerCase()
-                            }`}
-                            className="
-                inline-block font-medium text-slate-700
-                transition-all duration-200
-                hover:text-[#0071BC]
-                hover:-translate-y-[1px]
-              "
-                          >
-                            {item}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-24 text-center sm:text-left max-w-4xl">
+  {/* PAGES */}
+  <div className="flex flex-col items-center sm:items-start">
+    <h4 className="mb-6 text-sm font-bold uppercase tracking-widest text-[#0071BC]">
+      Navigation
+    </h4>
+    <ul className="space-y-4">
+      {["Home", "About", "Products", "Contact"].map((item) => (
+        <li key={item}>
+          <Link
+            to={`/${item === "Home" ? "" : item.toLowerCase()}`}
+            className="group relative inline-block text-[16px] font-medium text-slate-600 transition-colors duration-300 hover:text-[#0071BC]"
+          >
+            {item}
+            <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#0071BC] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
 
-                  {/* PRODUCTS */}
-                  <div>
-                    <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
-                      Products
-                    </h4>
-
-                    <ul className="space-y-3 text-[15px]">
-                      {[
-                        { name: "CalciPro Liquid", slug: "calcipro-liquid" },
-                        { name: "BioShield-X", slug: "bioshield-x" },
-                        { name: "ShellGuard", slug: "shellguard" },
-                        { name: "MinTrust P", slug: "mintrust-p" },
-                      ].map((item) => (
-                        <li key={item.slug}>
-                          <Link
-                            to={`/products/${item.slug}`}
-                            className="
-            inline-block font-medium text-slate-700
-            transition-all duration-200
-            hover:text-[#0071BC]
-            hover:-translate-y-[1px]
-          "
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CONTACT (FULL WIDTH ON MOBILE) */}
-                  <div className="col-span-2 md:col-span-1">
-                    <h4 className="mb-4 text-lg font-semibold text-[#0071BC]">
-                      Contact
-                    </h4>
-                    <ul className="space-y-3 text-[15px] text-slate-600">
-                      <li className="hover:text-[#0071BC] transition">
-                        Hyderabad, India
-                      </li>
-                      <li className="hover:text-[#0071BC] transition">
-                        +91 74165 97767
-                      </li>
-                      <li className="hover:text-[#0071BC] transition">
-                        Connect@aviquesthealthcare.com
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+  {/* CONTACT */}
+  <div className="flex flex-col items-center sm:items-start">
+    <h4 className="mb-6 text-sm font-bold uppercase tracking-widest text-[#0071BC]">
+      Get In Touch
+    </h4>
+    <ul className="space-y-4 text-[16px] font-medium text-slate-600">
+      <li className="flex flex-col sm:flex-row items-center gap-2 group cursor-default">
+        <span className="text-slate-400 group-hover:text-[#0071BC] transition-colors italic">Location:</span>
+        <span className="group-hover:text-slate-900 transition-colors">Maharastra, India</span>
+      </li>
+      <li className="flex flex-col sm:flex-row items-center gap-2 group">
+        <span className="text-slate-400 group-hover:text-[#0071BC] transition-colors italic">Phone:</span>
+        <a href="tel:+917416597767" className="hover:text-slate-900 transition-colors">+91 74165 97767</a>
+      </li>
+      <li className="flex flex-col sm:flex-row items-center gap-2 group">
+        <span className="text-slate-400 group-hover:text-[#0071BC] transition-colors italic">Email:</span>
+        <a href="mailto:Connect@aviquesthealthcare.com" className="hover:text-slate-900 transition-colors break-all">
+          Connect@aviquesthealthcare.com
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 
                 {/* ================= CENTER BAR ================= */}
                 <div
