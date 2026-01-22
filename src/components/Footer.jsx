@@ -201,10 +201,10 @@ export default function Footer() {
                         Hyderabad, India
                       </li>
                       <li className="hover:text-[#0071BC] transition">
-                        +91 99999 99999
+                        +91 79952 35959
                       </li>
                       <li className="hover:text-[#0071BC] transition">
-                        info@aviquest.com
+                        Connect@aviquesthealthcare.com
                       </li>
                     </ul>
                   </div>

@@ -97,9 +97,9 @@ export default function ProductsSection() {
 
               {/* ================= CONTENT ================= */}
               <div className="flex flex-col flex-1 p-5 text-center">
-                <h3 className="text-base font-medium text-[#336600]">
-                  {product.name}
-                </h3>
+                <h3 className="mt-4 text-center text-lg font-semibold text-[#0071BC]">
+                      {product.name}
+                    </h3>
 
                 <div className="mt-auto pt-4 flex justify-center">
                   <Link to={`/products/${product.id}`}>

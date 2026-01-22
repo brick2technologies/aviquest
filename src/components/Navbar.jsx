@@ -74,7 +74,7 @@ export default function Navbar() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/917995235959"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 hover:bg-green-600 transition"

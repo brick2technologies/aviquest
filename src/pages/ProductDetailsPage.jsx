@@ -195,27 +195,19 @@ export default function ProductDetailPage() {
           {activeSection === "presentation" && product.presentation && (
             <ContentSection title="Presentation">
               <ul className="space-y-4 text-slate-700 leading-relaxed">
-                {product.presentation.availability && (
-                  <li>
-                    <strong className="text-slate-900">Availability:</strong>
-                    <span className="ml-1">
-                      {product.presentation.availability}
-                    </span>
-                  </li>
-                )}
 
-                {product.presentation.disclaimer && (
+                {product.presentation.packSize && (
                   <li>
-                    <strong className="text-slate-900">Disclaimer:</strong>
+                    
                     <span className="ml-1">
-                      {product.presentation.disclaimer}
+                      {product.presentation.packSize}
                     </span>
                   </li>
                 )}
 
                 {product.presentation.storage && (
                   <li>
-                    <strong className="text-slate-900">Storage:</strong>
+                    <strong className="text-slate-900">Storage Instruction:</strong>
                     <span className="ml-1">{product.presentation.storage}</span>
                   </li>
                 )}
